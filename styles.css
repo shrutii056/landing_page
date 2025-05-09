@@ -68,22 +68,53 @@ body {
   }
   
   /* Features Section */
-  .features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 40px 20px;
-    background-color: #000;
-  }
-  
+  ...existing code...
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: #000;
+}
+
+.feature {
+  width: calc(50% - 1rem); /* Two features per row on smaller screens */
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-top: 3px solid #be1f58;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+@media (min-width: 600px) {
   .feature {
-    color: white;
-    text-align: center;
-    margin: 20px;
-    font-size: 16px;
-    line-height: 1.4;
-    position: relative;
+    width: 160px; /* Original width on larger screens */
   }
+}
+  
+...existing code...
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: #000;
+}
+
+.feature {
+  width: calc(50% - 1rem); /* Two features per row on smaller screens */
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-top: 3px solid #be1f58;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+@media (min-width: 600px) {
+  .feature {
+    width: 160px; /* Original width on larger screens */
+  }
+}
   
   .feature::before {
     content: '';
@@ -116,13 +147,14 @@ body {
   }
 
   .features {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* Change to row */
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: stretch; /* Align items to fill the height */
   }
 
   .feature {
-    width: 80%;
-    margin-bottom: 30px;
+    width: calc(50% - 10px); /* Two columns with some gap */
+    margin-bottom: 10px;
     font-size: 15px;
   }
 
@@ -296,4 +328,3 @@ body {
   max-width: 800px;
   background-color: grey;
 }
-
